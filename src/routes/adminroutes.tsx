@@ -16,11 +16,11 @@ type TSidebarItem = {
   children?: TSidebarItem[];
 };
 
-const adminPaths = [
+export const adminPaths = [
   {
     name: "Dashboard",
     path: "dashboard",
-    element: /* "ADMIN_DASHBOARD" */ <AdminDashboard />,
+    element: <AdminDashboard />,
   },
   {
     name: "User Management",
@@ -28,31 +28,25 @@ const adminPaths = [
       {
         name: "Create Admin",
         path: "create-admin",
-        element: /* "CREATE_ADMIN" */ <CreateAdmin />,
+        element: <CreateAdmin />,
       },
       {
         name: "Create Faculty",
         path: "create-faculty",
-        element: /* "CREATE_FACULTY" */ <CreateFaculty />,
+        element: <CreateFaculty />,
       },
       {
         name: "Create Student",
         path: "create-student",
-        element: /* "CREATE_STUDENT" */ <CreateStudent />,
+        element: <CreateStudent />,
+      },
+      {
+        name: "Create Member",
+        path: "create-member",
+        element: <CreateStudent />,
       },
     ],
   },
-
-  /* {
-    name: "Course Management",
-    children: [
-      {
-        name: "Offered Course",
-        path: "/admin/offere-course",
-        element: <CreateAdmin />,
-      },
-    ],
-  }, */
 ];
 
 //part-2
@@ -81,7 +75,8 @@ export const adminSidebarItems = adminPaths.reduce(
 );
 
 //part-1
-export const adminRoutes = adminPaths.reduce((acc: TRoute[], item) => {
+//programing way
+/* export const adminRoutes = adminPaths.reduce((acc: TRoute[], item) => {
   if (item.path && item.element) {
     acc.push({
       path: item.path,
@@ -98,7 +93,7 @@ export const adminRoutes = adminPaths.reduce((acc: TRoute[], item) => {
     });
   }
   return acc;
-}, []);
+}, []); */
 
 //! Hard Corded way.......
 
